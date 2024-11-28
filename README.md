@@ -1,4 +1,4 @@
-### ## # Free CMD-Tool to Sync your input device audio BPM with Resolume BPM in REAL TIME. 
+# Free CMD-Tool to Sync your input device audio BPM with Resolume BPM in REAL TIME. 
 
 Forked from https://github.com/zak-45/WLEDAudioSyncRTBeat and adjusted for Resolume.<br>
 Sync your input audio bpm with Resolume. The program detect it automatically and it sends it to the program.<br>
