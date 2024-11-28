@@ -108,8 +108,12 @@ class BeatDetector:
             # recalculate BPM for GrandMA3
             bpmg = math.sqrt(bpm / 240) * 100
 
+            #Additional calculation for resolume
+
+            bpmr = (bpm -20)*0.002083
+
             if args.verbose:
-                self.spinner.print_bpm(bpm, dbs)
+                self.spinner.print_bpm(bpmr, dbs)
 
             for server, server_info in zip(self.osc_servers, self.server_info):
                 mode = server_info.mode
@@ -120,7 +124,7 @@ class BeatDetector:
                 elif mode.lower() == "gma3":
                     server[0].send_message(server[1], bpmg)
                 else:
-                    server[0].send_message(server[1], bpm)
+                    server[0].send_message(server[1], bpmr)
 
         return None, pyaudio.paContinue  # Tell pyAudio to continue
 
